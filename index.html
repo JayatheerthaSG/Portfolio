@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0d6efd, #6610f2);
+      color: white;
+      padding: 6rem 0 4rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid white;
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+    font-weight: 600;
+     font-size: 3rem; 
+     transition: color 0.5s ease;
+    }
+    header p {
+  font-size: 1.5rem; 
+    }
+
+
+    nav a.nav-link {
+      color: white !important;
+    }
+
+    .card {
+      transition: transform 0.3s;
+      border: none;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    section h2 {
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      background: #343a40;
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .resume-button {
+      margin-top: 1rem;
+    }
+
+    .education-toggle {
+      cursor: pointer;
+      color: #0d6efd;
+      text-decoration: underline;
+    }
+
+    .education-details {
+      display: none;
+      font-style: italic;
+      font-size: 0.95em;
+      margin-top: 0.5rem;
+    }
+
+    #education .education-toggle {
+    text-decoration: none; 
+    color: black !important; 
+  }
+
+  #education .education-toggle:hover {
+    text-decoration: none; 
+    color: rgb(224, 169, 169) !important; 
+  }
+
+    #internships .list-group-item a {
+    text-decoration: none;     
+    color: black;              
+  }
+
+  #internships .list-group-item a:hover {
+    text-decoration: none;     
+    color: black; 
+     }
+ #links .list-group-item a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+  }
+
+  #links .list-group-item a:hover {
+    text-decoration: none;   
+    color: #ffc107;          
+  }
+
+    header {
+  min-height: 35vh; 
+  overflow: hidden;
+  position: relative;
+  color: white;
+  padding: 3rem 0;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.header-content {
+  z-index: 2;
+  position: relative;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 3px solid white;
+}
+@media (max-width: 768px) {
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+    position: static;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1.2rem;
+  }
+
+  .header-content {
+    padding-top: 2rem;
+  }
+}
+  </style>
+</head>
+<body>
+  <header class="position-relative text-center text-white">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/assets/videos/background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="video-overlay"></div>
+  <div class="header-content position-relative z-1 py-5">
+   <img src="/assets/images/myphoto.jpg" alt="Jayatheertha Photo" class="profile-pic rounded-circle mb-3 img-fluid">
+
+    <h1>Jayatheertha S G</h1>
+    <p>Computer Science Engineer | Aspiring SDE</p>
+    <a href="/assets/documents/Jayatheertha_Resume.pdf" class="btn btn-light resume-button" download>Resume</a>
+  </div>
+</header>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#internships">Internships</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I'm a CSE student deeply passionate about software development, full-stack engineering, and AI/ML. I enjoy solving real-world problems through code and constantly seek opportunities to learn and grow.
+      </p>
+    </div>
+  </section>
+
+ <section id="education" class="py-5 bg-light">
+  <div class="container">
+    <h2>Education</h2>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <button class="btn btn-outline-dark w-100 text-start education-toggle">M.Tech in Computer Science - Ramaiah Institute of Technology (2024 - 2026)</button>
+        <div class="education-details mt-2" style="display: none;">CGPA: 8.04</div>
+      </li>
+      <li class="list-group-item">
+        <button class="btn btn-outline-dark w-100 text-start education-toggle">B.E. in Computer Science - Amruta Institute of Engineering and Management Sciences (2019 - 2023)</button>
+        <div class="education-details mt-2" style="display: none;">CGPA: 8.14</div>
+      </li>
+      <li class="list-group-item">
+        <button class="btn btn-outline-dark w-100 text-start education-toggle">Pre-University - Acharya PU College (2017 - 2019)</button>
+        <div class="education-details mt-2" style="display: none;">Percentage: 71%</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.education-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const details = button.nextElementSibling;
+      details.style.display = details.style.display === 'none' ? 'block' : 'none';
+    });
+  });
+</script>
+
+  <section id="skills" class="py-5">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Programming Languages</h5>
+          <ul>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C++</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Web Development</h5>
+          <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Bootstrap, React</li>
+            <li>Flask</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Tools & Platforms</h5>
+          <ul>
+            <li>Git & GitHub</li>
+            <li>Firebase</li>
+            <li>Google Cloud</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="py-5 bg-light">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Blood Pressure Prediction</h5>
+              <p class="card-text">Machine learning model to predict BP levels. Integrated with Firebase and Excel storage.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Image-based Q&A System</h5>
+              <p class="card-text">Generated answers from images using Hugging Face NLP models.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Windmill Animation</h5>
+              <p class="card-text">Created a 3D windmill animation using Blender for visual demo.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Firebase Auth Web App</h5>
+              <p class="card-text">Developed a Flask app with Firebase authentication and database storage.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">SpO₂ Estimator from Images</h5>
+              <p class="card-text">Estimated SpO₂ levels from medical device images using image processing and ML.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Portfolio Website</h5>
+              <p class="card-text">Built this personal portfolio using HTML, CSS, and Bootstrap to showcase my work.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications" class="py-5">
+    <div class="container">
+      <h2>Certifications</h2>
+      <ul class="list-group">
+        <li class="list-group-item"> Data analytics on AWS <a href="https://www.coursera.org/account/accomplishments/verify/YRYY8PLVZGKR?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank">(Coursera)</a></li>
+        <li class="list-group-item"> Software Engineering Virtual Experience <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:6928236529517572096?utm_source=linkedin_share&utm_medium=member_desktop_share&utm_content=post" target="_blank">(JP Morgan)</a></li>
+        <li class="list-group-item">Full Stack Web Development <a href="">(Tap Academy)</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="internships" class="py-5 bg-light">
+    <div class="container">
+      <h2>Internships</h2>
+      <ul class="list-group">
+        <li class="list-group-item"><a href="https://github.com/JayatheerthaSG/INTERNSHIP/blob/master/INTERNSHIP%20CERTIFICATE.jpeg" target="_blank">Intern -  INVENTERON TECHNOLOGIES (Sep 2022 - Oct 2024)</a></li>
+        <li class="list-group-item"><a href="https://smartinternz.com/internships/salesforce_certificates/9a8b8145fb0d94e518c19d9e4df9990e" target="_blank">Salesforce developer virtual internship (Aug 2023 - Oct 2023)</a></li>
+      </ul>
+    </div>
+  </section>
+
+ <section id="links" class="py-5 bg-light">
+  <div class="container">
+    <h2>Links</h2>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <i class="bi bi-github me-2"></i>
+        GitHub:<a href="https://github.com/jayatheerthasg" target="_blank"> jayatheerthasg</a>
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-linkedin me-2"></i>
+        LinkedIn:<a href="https://www.linkedin.com/in/jayatheerthasg" target="_blank"> jayatheerthasg</a>
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-cloud me-2"></i>
+        GCP:<a href="https://console.cloud.google.com" target="_blank"> Jayatheerthasg</a>
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-code-slash me-2"></i>
+        CodeChef:<a href="https://www.codechef.com/users/jayatheerthasg" target="_blank"> jayatheerthasg</a>
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-braces me-2"></i>
+        Codeforces:<a href="https://codeforces.com/profile/jayatheerthasg" target="_blank"> jayatheerthasg</a>
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-lightning-charge me-2"></i>
+        Salesforce:<a href="https://trailblazer.me/id/jayatheerthasg" target="_blank"> jayatheerthasg</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:jayatheertha2381@gmail.com">jayatheertha2381@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/jayatheertha" target="_blank">linkedin.com/in/jayatheertha</a></p>
+      <p>Phone : 7204814182</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jayatheertha. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
